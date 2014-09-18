@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.expedia.hdw</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.8</version>
+  </parent>
+
+  <name>casc-examples</name>
+
+  <groupId>net</groupId>
+  <artifactId>casc-examples</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+    
+  <properties>
+    <hadoopMainClass>net.TestTool</hadoopMainClass>
+    <shade.prefix>${project.groupId}.shaded</shade.prefix>
+    <hww.common.parent.version>8.0.0</hww.common.parent.version>
+  </properties>
+  
+  <scm>
+    <connection>scm:git:ssh://git@stash:7999/hdw/casc-examples.git</connection>
+    <developerConnection>scm:git:ssh://git@stash:7999/hdw/casc-examples.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>properties-maven-plugin</artifactId>
+        <version>1.0-alpha-2</version>
+        <executions>
+          <execution>
+            <phase>initialize</phase>
+            <goals>
+              <goal>read-project-properties</goal>
+            </goals>
+            <configuration>
+              <files>
+                <file>src/main/resources/com/expedia/hww/change/me/default.properties</file>
+              </files>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-core</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-common</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-hdfs</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.hadoop</groupId>
+      <artifactId>hadoop-test</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.expedia.dwcc</groupId>
+      <artifactId>common-hadoop-spring</artifactId>
+      <version>1.0.8</version>
+    </dependency>
+    <dependency>
+      <groupId>com.expedia.dwcc</groupId>
+      <artifactId>common-metrics-hadoop</artifactId>
+      <version>1.0.2</version>
+    </dependency>
+    <dependency>
+      <groupId>com.expedia.dwcc</groupId>
+      <artifactId>common-manifest</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.expedia.hdw</groupId>
+      <artifactId>common-cascading</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+  </dependencies>
+</project>

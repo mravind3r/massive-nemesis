@@ -1,0 +1,15 @@
+export DRIVEN_API_KEY=C541F4DB763942968ABD8F63DB59BEC7
+
+https://driven.cascading.io
+
+m.ravind3r@gmail.com
+expedia
+
+
+</dependency>
+  <dependency>
+  <groupId>driven</groupId>
+  <artifactId>driven-plugin</artifactId>
+  <version>1.0.4-eap-72</version>
+  <classifier>io</classifier>
+</dependency>

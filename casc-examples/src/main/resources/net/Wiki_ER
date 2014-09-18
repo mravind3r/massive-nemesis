@@ -1,0 +1,58 @@
+Understanding the StackOverflow Database Schema
+See Also: Main Page - Business Intelligence - Data Mining the StackOverflow Database
+
+Now for some schema notes, and I'm going to go out of alphabetical order because everything links back to the Users table. I'm only going to cover the fields that aren't immediately obvious:
+
+Contents
+
+1 Users Table
+2 Posts Table
+3 Comments Table
+4 Badges Table
+5 Votes Table
+6 VoteTypes Table
+7 Related Articles About the StackOverflow Database
+Users Table
+
+Id - primary key, identity field from the original StackOverflow database. Id 1 is "Community", which is a special user that denotes community ownership, like wiki questions and answers.
+LastAccessDate - this is useful because it tells you when the data export was last updated. If you're doing queries for things like the last 30 days, check the most recent date here.
+Age - the user enters this manually, so it's not terribly reliable as Brent Ozar discovered earlier.
+AboutMe - We're using an nvarchar(max) field here, but you could technically go with a shorter field like nvarchar(2000).
+UpVotes and DownVotes - the number of votes this user has cast.
+Posts Table
+
+In StackOverflow, questions and answers are both considered posts.
+
+Id - primary key, identity field from the original StackOverflow database.
+PostTypeId - 1 is a question, 2 is an answer. Answers will have a ParentId field populated to link back to the question post.
+Title - the title of the question. Answer titles will be null.
+OwnerUserId - joins back to Users.Id. If OwnerUserId = 1, that's the community user, meaning it's a wiki question or answer.
+AcceptedAnswerId - for questions, this points to the Post.Id of the officially accepted answer. This isn't necessarily the highest-voted answer, but the one the questioner accepted.
+ClosedDate - if the question was closed for any reason (subjective, offtopic, etc) then the ClosedDate will be populated.
+Tags - okay, time to blow out of the bullet points for a second.
+StackOverflow limits you to five tags per question (answers aren't tagged), and all five are stored in this field. For example, for question 305223, the Tags field is "<offtopic><fun><not-programming-related><jon-skeet>". It's up to you to normalize these. Sam Saffron's SoSlow utility automatically creates Tags and PostsTags tables to normalize these.
+
+Next, check the contents of the Tag field carefully. StackOverflow allows periods in the tag, like the .NET tag and ASP.NET tag. However, in the database, these are stored as "aspûnet". Just something to be aware of.
+
+Comments Table
+
+Id - primary key, identity field from the original StackOverflow database.
+PostId - the post parent for this comment. Joins to the Post.Id field.
+UserId - who left the comment. Joins to the User.Id field.
+Badges Table
+
+Id - an identity field for a primary key. This number is meaningless - we just added it for some referential integrity.
+UserId - joins back to Users.Id to show whose badge it is.
+Name - the name of the Badge, like Teacher or Nice Answer.
+CreationDate - when the user achieved the badge.
+Votes Table
+
+This stores the votes cast on posts, but the key field is VoteTypeId. All of the Id fields except for Badges.Id are from StackOverflow's original database. In theory, these numbers will not change, which means if you build your own child table structures like UserBaconPreferences, and you join via User.Id, you should be able to blow away and reload the Users table with every new StackOverflow database dump. That's the theory, but in reality, you shouldn't rely on anybody else's ID fields, because there's no reason to believe these won't completely change down the road. Who knows - Jeff might switch over to GUIDs as primary keys.
+
+VoteTypes Table
+
+This joins to Votes based on the Id field. Common vote types include:
+
+1 - AcceptedByOriginator - this was the answer that the questioner chose to accept.
+2 - UpMod - the post was moderated up. That's good.
+3 - DownMod - the post was moderated down. That's bad.

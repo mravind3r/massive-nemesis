@@ -1,0 +1,36 @@
+This shows some sample data from all the xml data fileds.
+DO NOT OPEN THOSE FILES IN ECLIPSE OR ANY NOTEPAD ETC AS THEY MAY CRASH.
+OPEN IN COMMAND LINE LINUX.
+
+
+Representative Data only , may not be present in the data files supplied
+
+Users.xml
+
+<row Id="-1" Reputation="1" CreationDate="2010-09-01T17:32:37.120" DisplayName="Community" LastAccessDate="2010-09-01T17:32:37.120" Location="on the server farm" AboutMe="&lt;p&gt;Hi, I'm not really a person.&lt;/p&gt;&#xD;&#xA;&lt;p&gt;I'm a background process that helps keep this site clean!&lt;/p&gt;&#xD;&#xA;&lt;p&gt;I do things like&lt;/p&gt;&#xD;&#xA;&lt;ul&gt;&#xD;&#xA;&lt;li&gt;Randomly poke old unanswered questions every hour so they get some attention&lt;/li&gt;&#xD;&#xA;&lt;li&gt;Own community questions and answers so nobody gets unnecessary reputation from them&lt;/li&gt;&#xD;&#xA;&lt;li&gt;Own downvotes on spam/evil posts that get permanently deleted&lt;/li&gt;&#xD;&#xA;&lt;li&gt;Own suggested edits from anonymous users&lt;/li&gt;&#xD;&#xA;&lt;/ul&gt;" Views="0" UpVotes="117930" DownVotes="7972" EmailHash="a007be5a61f6aa8f3e85ae2fc18dd66e" />
+<row Id="2" Reputation="101" CreationDate="2010-09-01T17:46:32.253" DisplayName="Geoff Dalgas" LastAccessDate="2013-08-25T00:06:12.670" WebsiteUrl="http://stackoverflow.com" Location="Corvallis, OR" AboutMe="&lt;p&gt;Developer on the StackOverflow team.  Find me on&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;a href=&quot;http://www.twitter.com/SuperDalgas&quot; rel=&quot;nofollow&quot;&gt;Twitter&lt;/a&gt;&#xA;&lt;br&gt;&lt;br&gt;&#xA;&lt;a href=&quot;http://blog.stackoverflow.com/2009/05/welcome-stack-overflow-valued-associate-00003/&quot;&gt;Stack Overflow Valued Associate #00003&lt;/a&gt;&lt;/p&gt;&#xA;" Views="60" UpVotes="8" DownVotes="0" EmailHash="b437f461b3fd27387c5d8ab47a293d35" Age="36" />
+  
+Comments.xml
+<row Id="5" PostId="20" Score="17" Text="+1 for truth, -1 for practicality. :)" CreationDate="2010-09-01T19:49:47.933" UserId="9" />
+<row Id="8" PostId="3" Text="@Gabriel: that was already in my answer, look at the end." CreationDate="2010-09-01T19:51:45.260" UserId="11" />
+<row Id="9" PostId="23" Score="2" Text="Sometimes it's the technique I use, but also when I'm too deep into my work and I want to change my mind to get a &quot;fresh&quot; look to my work." CreationDate="2010-09-01T19:51:48.200" UserId="28" />
+
+
+Votes.xml
+ <row Id="1" PostId="2" VoteTypeId="5" UserId="22" CreationDate="2010-09-01T00:00:00.000" />
+  <row Id="3" PostId="3" VoteTypeId="2" CreationDate="2010-09-01T00:00:00.000" />
+  <row Id="4" PostId="3" VoteTypeId="2" CreationDate="2010-09-01T00:00:00.000" />
+  <row Id="5" PostId="2" VoteTypeId="2" CreationDate="2010-09-01T00:00:00.000" />
+
+
+Posts.xml
+<row Id="7" PostTypeId="2" ParentId="1" CreationDate="2010-09-01T19:42:16.797" Score="10" Body="&lt;p&gt;I think the answer is the usual &quot;It depends&quot; one.  Commenting code just to comment code is a smell.  Commenting code because you're using an obscure algorithm that's an order of magnitude faster saves the maintenance programmer (usually me 6 months after I wrote it) half a day of poking through the code to determine what it's doing.&lt;/p&gt;&#xA;" OwnerUserId="21" LastActivityDate="2010-09-01T19:42:16.797" CommunityOwnedDate="2011-01-31T09:04:54.130" />
+<row Id="9" PostTypeId="1" CreationDate="2010-09-01T19:43:04.957" Score="39" ViewCount="2545" Body="&lt;p&gt;Sometimes, the things I have to do for my job are interesting and engaging.  Sometimes, they aren't.  Occasionally, they &lt;i&gt;really&lt;/i&gt; aren't.&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Do you have any particular strategies or tricks for dealing with those dull stretches when your brain would rather be doing anything other than what you're supposed to be doing, particularly when the Internet and its boundless opportunities for interesting Slack beckon?&lt;/p&gt;&#xA;" OwnerUserId="17" LastEditorUserId="666" LastEditDate="2010-09-11T09:35:35.957" LastActivityDate="2011-01-04T21:22:43.957" Title="How do you stay focused at work?" Tags="&lt;productivity&gt;&lt;time-management&gt;" AnswerCount="24" CommentCount="1" FavoriteCount="17" ClosedDate="2012-11-13T19:09:35.853" CommunityOwnedDate="2011-01-04T21:22:43.957" />
+
+
+
+
+
+
+  
+ 
