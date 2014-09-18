@@ -1,4 +1,4 @@
-package net.stackoverflow.patterns.numerics;
+package net.stackoverflow.patterns.numerics.minmax;
 
 import net.stackoverflow.util.CommentsTupleGeneratorFunction;
 import net.stackoverflow.util.FilterJunk;

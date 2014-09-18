@@ -1,4 +1,4 @@
-package net.stackoverflow.patterns.numerics;
+package net.stackoverflow.patterns.numerics.minmax;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
