@@ -27,7 +27,9 @@ public class FilterJunk extends BaseOperation<Object> implements Filter<Object>{
 		String content = tupleEntry.getString(new Fields("line"));
 		return ( content.equalsIgnoreCase("</comments>")
 				|| content.equalsIgnoreCase("<comments>")
-				|| content.contains("<?xml"));
+        || content.contains("<?xml") || content.contains("<users>") || content.contains("</users>")
+
+    );
 		
 	}
 

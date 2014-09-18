@@ -1,7 +1,7 @@
 package net.stackoverflow.patterns.numerics;
 
-import net.stackoverflow.util.FilterJunk;
 import net.stackoverflow.util.CommentsTupleGeneratorFunction;
+import net.stackoverflow.util.FilterJunk;
 
 import org.junit.Test;
 
@@ -24,10 +24,12 @@ public class FindNumCommentsFirstCommentLastCommentAssembly {
   // here will write an assembly that will give me an output as follows
   // given the comments xml file , this program will generate a new dataset that will have
   // first date the user commented, last date user commented and the total comments.
-  @Test
-  public void test() {
+
+  public void give_me_an_output_as_defined() {
     final String dir = System.getProperty("user.dir");
     String inputSource = dir + "/src/main/resources/net/do-not-open-in-eclipse-large-files/Comments.xml";
+
+    // check the results here after the code is executed
     String sinkFolder = dir + "/src/main/resources/net/results";
 
     Scheme inputScheme = new TextLine(new Fields("line")); // "line" ??? this is default given by cascading api
@@ -62,6 +64,13 @@ public class FindNumCommentsFirstCommentLastCommentAssembly {
     Flow<?> flow = new HadoopFlowConnector().connect(flowDef);
     flow.complete();
 
+  }
+
+
+  // use junit to run this
+  @Test
+  public void runCode() {
+    give_me_an_output_as_defined();
   }
 
 }
