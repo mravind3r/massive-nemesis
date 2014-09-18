@@ -3,3 +3,7 @@ Given Users data , count the number of records based on following criteria
 
 Define a counter group
 
+counter1 = total count of all users who have reputation between 0-100
+counter2 = total count of all users who have reputation between 101-101
+counter2 = total count of all users who have reputation between >101
+
