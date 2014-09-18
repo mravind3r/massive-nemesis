@@ -1,7 +1,7 @@
 package net.stackoverflow.patterns.numerics;
 
 import net.stackoverflow.util.FilterJunk;
-import net.stackoverflow.util.TupleGeneratorFunction;
+import net.stackoverflow.util.CommentsTupleGeneratorFunction;
 
 import org.junit.Test;
 
@@ -41,7 +41,7 @@ public class FindNumCommentsFirstCommentLastCommentAssembly {
     Fields fields = new Fields("Id", "PostId", "Score", "Text", "CreationDate", "UserId");
 
     // @input fields -- thats how thw output tuples shud be like
-    pipe = new Each(pipe, new TupleGeneratorFunction(fields), Fields.RESULTS); // has got jaxb parser that will parse
+    pipe = new Each(pipe, new CommentsTupleGeneratorFunction(fields), Fields.RESULTS); // has got jaxb parser that will parse
                                                                                // the xml and seperate content
     // pipe = new Each(pipe, new Debug());
     // can use it to spit out whats happening internally on the console uncomment as needed

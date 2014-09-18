@@ -16,11 +16,11 @@ import cascading.tuple.Tuple;
 import cascading.tuple.TupleEntry;
 
 // this operation will generate the tuples 
-public class TupleGeneratorFunction extends BaseOperation<Object> implements Function<Object> {
+public class CommentsTupleGeneratorFunction extends BaseOperation<Object> implements Function<Object> {
 
   private Unmarshaller jaxbUnmarshaller;
 
-  public TupleGeneratorFunction(Fields fields) {
+  public CommentsTupleGeneratorFunction(Fields fields) {
     super(1, fields);
     // 1 = new Fields("line") as this will receive the results of the previous pipe
     // fields = outgoing tuple
