@@ -29,6 +29,7 @@ public class TopNTupleAssembly {
     String inputPath = path + "/src/main/resources/net/do-not-open-in-eclipse-large-files/Users.xml";
 
     // check the results here ( visual inspection only, will make a tool avail later)
+    // eg: cat ~/src/main/resources/net/results/part-00000
     String outputDir = path + "/src/main/resources/net/results";
 
     Scheme inputScheme = new TextLine(new Fields("line"));
