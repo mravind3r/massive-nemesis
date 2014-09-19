@@ -28,7 +28,7 @@ public class FirstLastDateNumCommentsTupleCreator extends BaseOperation<FirstLas
 	// and the tuple we shall be actually be operating upon will have 1 fields date
 	
 	FirstLastDateNumCommentsTupleCreator(Fields outGoingTuple){
-		super(2,outGoingTuple); // 1 indicate the tuple fileds being operated upon
+    super(outGoingTuple.size(), outGoingTuple);
 	}
 	
 

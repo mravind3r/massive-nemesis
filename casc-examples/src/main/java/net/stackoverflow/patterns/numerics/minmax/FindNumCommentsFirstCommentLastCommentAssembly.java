@@ -53,12 +53,16 @@ public class FindNumCommentsFirstCommentLastCommentAssembly {
     pipe = new GroupBy(pipe, new Fields("UserId"));
 
     // need a custom aggregator to find the first and last time user commented
-    Fields inputFields = new Fields("min", "max", "total"); // the output that I am interested in , rest of fields
+    Fields outputFields = new Fields("min", "max", "total"); // the output that I am interested in , rest of fields
                                                             // ignore
 
     // @input inputFields -- result in these fields only
     // custom aggregator to do the actual business logic
-    pipe = new Every(pipe, new FirstLastDateNumCommentsTupleCreator(inputFields));
+    pipe = new Every(pipe, new FirstLastDateNumCommentsTupleCreator(outputFields));
+
+    // if i want to select the incoming fields
+    // Fields inputFields = new Fields(.....);
+    // pipe = new Every(pipe,inputFields, new FirstLastDateNumCommentsTupleCreator(inputFields));
 
     FlowDef flowDef = new FlowDef().addSource(pipe, inTap).addTailSink(pipe, sink);
     Flow<?> flow = new HadoopFlowConnector().connect(flowDef);

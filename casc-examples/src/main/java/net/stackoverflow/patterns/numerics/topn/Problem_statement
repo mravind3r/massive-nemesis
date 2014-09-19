@@ -1,0 +1,4 @@
+select * from Users.xml order by reputation desc limit 10;
+
+-- top 10 users by reputation
+ 

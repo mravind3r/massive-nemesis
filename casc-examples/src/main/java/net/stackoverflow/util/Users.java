@@ -48,6 +48,17 @@ public class Users {
   @XmlAttribute(name = "EmailHash")
   private String emailHash;
 
+  @XmlAttribute(name = "AccountId")
+  private Integer accountId;
+
+  public Integer getAccountId() {
+    return accountId;
+  }
+
+  public void setAccountId(Integer accountId) {
+    this.accountId = accountId;
+  }
+
   public Integer getId() {
     return id;
   }

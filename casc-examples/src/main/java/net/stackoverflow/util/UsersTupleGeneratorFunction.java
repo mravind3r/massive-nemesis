@@ -85,6 +85,7 @@ public class UsersTupleGeneratorFunction extends BaseOperation<Object> implement
     tuple.add(users.getUpVotes());
     tuple.add(users.getViews());
     tuple.add(users.getWebsiteUrl());
+    tuple.add(users.getAccountId());
 
     // the hack to get the counters going
 
