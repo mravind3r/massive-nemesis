@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import cascading.flow.Flow;
 import cascading.flow.FlowDef;
-import cascading.flow.hadoop2.Hadoop2MR1FlowConnector;
+import cascading.flow.hadoop.HadoopFlowConnector;
 import cascading.operation.Insert;
 import cascading.operation.regex.RegexSplitter;
 import cascading.pipe.Each;
@@ -54,7 +54,7 @@ public class InsertBooleanFlag {
 
     FlowDef flowDef = new FlowDef();
     flowDef.addSource(pipe, inTap).addTailSink(pipe, sink);
-    Flow<?> flow = new Hadoop2MR1FlowConnector().connect(flowDef);
+    Flow<?> flow = new HadoopFlowConnector().connect(flowDef);
     flow.complete();
 
   }

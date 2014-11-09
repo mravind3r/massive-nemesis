@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import cascading.flow.Flow;
 import cascading.flow.FlowDef;
-import cascading.flow.hadoop2.Hadoop2MR1FlowConnector;
+import cascading.flow.hadoop.HadoopFlowConnector;
 import cascading.operation.Identity;
 import cascading.pipe.Each;
 import cascading.pipe.Every;
@@ -66,7 +66,7 @@ public class TopNTupleAssembly {
     pipe = new Retain(pipe, new Fields("Id", "displayName", "reputation"));
 
     FlowDef flowDef = new FlowDef().addSource(pipe, inTap).addTailSink(pipe, sinkTap);
-    Flow<?> flow = new Hadoop2MR1FlowConnector().connect(flowDef);
+    Flow<?> flow = new HadoopFlowConnector().connect(flowDef);
     flow.complete();
 
 
