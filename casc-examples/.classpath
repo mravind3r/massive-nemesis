@@ -22,24 +22,9 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/usr/local/java/jdk1.7.0_67/lib/tools.jar">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="maven.groupId" value="jdk.tools"/>
-			<attribute name="maven.artifactId" value="jdk.tools"/>
-			<attribute name="maven.version" value="1.6"/>
-			<attribute name="maven.scope" value="system"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/home/ravi/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1.jar" sourcepath="/home/ravi/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1-sources.jar">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="javadoc_location" value="jar:file:/home/ravi/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.3-1/jaxb-impl-2.2.3-1-javadoc.jar!/"/>
-			<attribute name="maven.groupId" value="com.sun.xml.bind"/>
-			<attribute name="maven.artifactId" value="jaxb-impl"/>
-			<attribute name="maven.version" value="2.2.3-1"/>
-			<attribute name="maven.scope" value="provided"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>

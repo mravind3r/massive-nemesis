@@ -5,6 +5,7 @@ import org.junit.Test;
 import cascading.flow.Flow;
 import cascading.flow.FlowDef;
 import cascading.flow.hadoop2.Hadoop2MR1FlowConnector;
+import cascading.operation.Debug;
 import cascading.operation.Insert;
 import cascading.operation.regex.RegexSplitter;
 import cascading.pipe.Each;
@@ -17,7 +18,6 @@ import cascading.tap.SinkMode;
 import cascading.tap.Tap;
 import cascading.tap.hadoop.Hfs;
 import cascading.tuple.Fields;
-
 
 public class InsertBooleanFlag {
 
@@ -51,6 +51,7 @@ public class InsertBooleanFlag {
     // whats the use?? better write a function and based onthe logic insert value
     // re-create the tuple and spit it out in the argCollector()
     pipe = new Each(pipe, new Fields("script"), new Insert(new Fields("flag"), true), Fields.ALL);
+    pipe = new Each(pipe, new Debug());
 
     FlowDef flowDef = new FlowDef();
     flowDef.addSource(pipe, inTap).addTailSink(pipe, sink);
