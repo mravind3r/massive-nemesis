@@ -25,3 +25,17 @@ public class MainClass {
   }
 
 }
+
+/**
+ * can do better with the mappedArguments.getDest() -- this return a string , wud it not be great if it reutrns a hadoop
+ * Path object ?? so in the MappedSrguments class
+ * 
+ * @Parameter(names = HIT_CLEANSE_PATH, description = "Hit Cleanse data", converter = PathArgumentConverter.class,
+ *                  required = true) private Path hitCleansed;
+ */
+
+/**
+ * import org.apache.hadoop.fs.Path; import com.beust.jcommander.IStringConverter; public class PathArgumentConverter
+ * implements IStringConverter<Path> { * @Override public Path convert(String pathName) { return new Path(pathName); } }
+ */
+
