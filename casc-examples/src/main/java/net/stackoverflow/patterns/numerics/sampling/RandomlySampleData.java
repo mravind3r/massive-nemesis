@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import cascading.flow.Flow;
 import cascading.flow.FlowDef;
-import cascading.flow.hadoop2.Hadoop2MR1FlowConnector;
+import cascading.flow.hadoop.HadoopFlowConnector;
 import cascading.pipe.Each;
 import cascading.pipe.Pipe;
 import cascading.scheme.Scheme;
@@ -40,7 +40,7 @@ public class RandomlySampleData {
     flowDef.addSource(pipe, inTap);
     flowDef.addTailSink(pipe, sink);
     
-    Flow<?> flow = new Hadoop2MR1FlowConnector().connect(flowDef);
+    Flow<?> flow = new HadoopFlowConnector().connect(flowDef);
     flow.complete();
     
 
